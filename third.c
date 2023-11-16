@@ -121,7 +121,7 @@ void get_mul(stack_t **stack, unsigned int line_number)
 /**
  * get_mod - finds modulus of top two elements
  * @stack: pointer to the top of the stack
- * @line_number: line number 
+ * @line_number: line number
  * Return: nothing or exit_failure
  */
 void get_mod(stack_t **stack, unsigned int line_number)

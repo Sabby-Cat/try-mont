@@ -39,11 +39,11 @@ typedef struct instruction_s
 } instruction_t;
 
 extern FILE *file;
-
+FILE *file;
 /****operation****/
 void (*operator_function)(stack_t **, unsigned int);
 void (*get_operator(char *fstr, unsigned int ln, stack_t **stack))
-(stack_t**, unsigned int);
+	(stack_t**, unsigned int);
 
 /****first****/
 void get_pall(stack_t **stack, unsigned int line_number);

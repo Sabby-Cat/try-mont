@@ -5,7 +5,7 @@
  * @argv: list of arguments
  * Return: 0 or error
  */
-int main(int argc, char argv[])
+int main(int argc, char *argv[])
 {
 	size_t buff = 1024, count = 0;
 	ssize_t line;
@@ -34,7 +34,7 @@ int main(int argc, char argv[])
 		}
 		else if (ar[0] != NULL && ar[0][0] != '#')
 		{
-			operator_function = go(ar[0], count, &head);
+			operator_function = get_operator(ar[0], count, &head);
 			if (operator_function == NULL && count == 0)
 			{
 				fprintf(stderr, "L%ld: unknown instruction %s\n",

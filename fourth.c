@@ -1,5 +1,5 @@
 #include "monty.h"
-
+#include <ctype.h>
 /**
  * get_pchar - fprints char at top of  stack
  * @stack: pointer to head of the stack
