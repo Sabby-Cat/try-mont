@@ -1,10 +1,13 @@
 #include "monty.h"
 /**
- * go -
- * 
- * 
+ * get_operator - gets the operation
+ * @fstr: function string from file
+ * @ln: line count
+ * @stack: stack
+ * Return: nothing or exit_failure
 */
-void (*go(char *op_f, unsigned int lc, stack_t **stk))(stack_t**, unsigned int)
+void (*get_operator(char *fstr, unsigned int ln, stack_t **stack))
+	(stack_t**, unsigned int)
 {
         int i;
 
@@ -27,13 +30,11 @@ void (*go(char *op_f, unsigned int lc, stack_t **stk))(stack_t**, unsigned int)
 	};
     for (i = 0; operation[i].opcode != NULL; i++)
 	{
-		if (strcmp(operation[i].opcode, op_f) == 0)
-		{
+		if (strcmp(operation[i].opcode, fstr) == 0)
 			return (operation[i].f);
-		}
 	}
-	fprintf(stderr, "L%u: unknown instruction %s\n", lc, op_f);
+	fprintf(stderr, "L%u: unknown instruction %s\n", ln, fstr);
 	fclose(file);
-	get_free(*stk);
+	get_free(*stack);
 	exit(EXIT_FAILURE);
 }
