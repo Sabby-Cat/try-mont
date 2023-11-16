@@ -37,11 +37,8 @@ void get_pstr(stack_t **stack, unsigned int line_number)
 	stack_t *fir = *stack;
 
 	(void)line_number;
-
 	if ((stack == NULL) || (*stack == NULL))
-	{
 		printf("\n");
-	}
 	else
 	{
 		while (fir != NULL)
@@ -52,9 +49,7 @@ void get_pstr(stack_t **stack, unsigned int line_number)
 				fir = fir->next;
 			}
 			else
-			{
 				break;
-			}
 		}
 		printf("\n");
 	}
@@ -72,16 +67,12 @@ void get_rotl(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	if ((*stack == NULL) || ((*stack)->next == NULL))
-	{
 		;
-	}
 	else
 	{
 		fir = last = *stack;
 		while (last->next)
-		{
 			last = last->next;
-		}
 		*stack = fir->next;
 		last->next = fir;
 		fir->prev = last;
@@ -94,25 +85,20 @@ void get_rotl(stack_t **stack, unsigned int line_number)
  * get_rotr - Rotate the right
  * @stack: Stack
  * @line_number: Line number
- * Return: Void
+ * Return: nothing or exit_failure
  */
 void get_rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *fir, *last;
 
 	(void)line_number;
-
 	if ((*stack == NULL) || ((*stack)->next == NULL))
-	{
 		;
-	}
 	else
 	{
 		fir = last = *stack;
 		while (last->next)
-		{
 			last = last->next;
-		}
 		last->prev->next = NULL;
 		last->prev = NULL;
 		last->next = fir;

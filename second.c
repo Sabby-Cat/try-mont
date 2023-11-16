@@ -39,9 +39,7 @@ void get_pop(stack_t **stack, unsigned int line_number)
 	fir = *stack;
 	*stack = (*stack)->next;
 	if (fir->next)
-	{
 		fir->next->prev = NULL;
-	}
 	free(fir);
 }
 
@@ -69,9 +67,7 @@ void get_swap(stack_t **stack, unsigned int line_number)
 		*stack = sec;
 		fir->next = sec->next;
 		if (sec->next != NULL)
-		{
 			sec->next->prev = fir;
-		}
 		sec->prev = NULL;
 		sec->next = fir;
 		fir->prev = sec;
